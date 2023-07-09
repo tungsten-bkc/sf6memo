@@ -1,22 +1,22 @@
 class Charactor {
-static Map characters= {
-  0: {'name': 'RYU', 'image': 'ryu.png'},
-  1: {'name': 'LUKE', 'image': 'luke.png'},
-  2: {'name': 'JAMIE', 'image': 'jamie.png'},
-  3: {'name': 'CHUN-LI', 'image': 'chunli.png'},
-  4: {'name': 'GUILE', 'image': 'guile.png'},
-  5: {'name': 'KIMBERLY', 'image': 'kimberly.png'},
-  6: {'name': 'JURI', 'image': 'juri.png'},
-  7: {'name': 'KEN', 'image': 'ken.png'},
-  8: {'name': 'BLANKA', 'image': 'blanka.png'},
-  9: {'name': 'DHALSIM', 'image': 'dhalsim.png'},
-  10: {'name': 'E.HONDA', 'image': 'ehonda.png'},
-  11: {'name': 'DEE JAY', 'image': 'deejay.png'},
-  12: {'name': 'MANON', 'image': 'manon.png'},
-  13: {'name': 'MARISA', 'image': 'marisa.png'},
-  14: {'name': 'JP', 'image': 'jp.png'},
-  15: {'name': 'ZANGIEF', 'image': 'zangief.png'},
-  16: {'name': 'LILY', 'image': 'lily.png'},
-  17: {'name': 'CAMMY', 'image': 'cammy.png'}
-};
+  static Map characters = {
+    0: {'name': 'ryu', 'image': 'ryu.png'},
+    1: {'name': 'luke', 'image': 'luke.png'},
+    2: {'name': 'jamie', 'image': 'jamie.png'},
+    3: {'name': 'chun-li', 'image': 'chunli.png'},
+    4: {'name': 'guile', 'image': 'guile.png'},
+    5: {'name': 'kimberly', 'image': 'kimberly.png'},
+    6: {'name': 'juri', 'image': 'juri.png'},
+    7: {'name': 'ken', 'image': 'ken.png'},
+    8: {'name': 'blanka', 'image': 'blanka.png'},
+    9: {'name': 'dhalsim', 'image': 'dhalsim.png'},
+    10: {'name': 'e.honda', 'image': 'ehonda.png'},
+    11: {'name': 'dee jay', 'image': 'deejay.png'},
+    12: {'name': 'manon', 'image': 'manon.png'},
+    13: {'name': 'marisa', 'image': 'marisa.png'},
+    14: {'name': 'jp', 'image': 'jp.png'},
+    15: {'name': 'zangief', 'image': 'zangief.png'},
+    16: {'name': 'lily', 'image': 'lily.png'},
+    17: {'name': 'cammy', 'image': 'cammy.png'}
+  };
 }

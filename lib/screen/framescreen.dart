@@ -1,131 +1,104 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/input_decorator.dart';
 
 class Frame extends StatelessWidget {
-  const Frame({super.key});
+  const Frame({
+    super.key,
+    required this.index,
+    required this.list,
+    // required this.name,
+    // required this.damage,
+    // required this.startUp,
+    // required this.active,
+    // required this.recovery,
+    // required this.all,
+    // required this.block,
+    // required this.hit,
+    // required this.drBlock,
+    // required this.drHit,
+    // required this.note,
+  });
+  final int index;
+  final list;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home:Scaffold(
-          appBar: AppBar(
-              title: const Text("Frame Data"),
-              leading: IconButton(
-                icon: const Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
-                onPressed: () => Navigator.pop(context),
+      home: Scaffold(
+        appBar: AppBar(
+            title: const Text("Frame Data"),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.white,
               ),
-              actions: const [
-                Padding(
-                    padding: EdgeInsets.only(right:10),
-                )
-              ]
-          ),
-
-          body: SingleChildScrollView(
-              child:Container(
-                height: MediaQuery.of(context).size.height,
-                  child:Column(
-                    children:[
-                      DataTable(
-                        dataRowColor: MaterialStateProperty.resolveWith((states) {
-              return Colors.cyan;
-              }),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black38, //色
-                            width: 2.0, //太さ
-                          ),
-                        ),
-                        columns:
-                        const [
-                          DataColumn(
-                              label: Text('技名',style:
-                              TextStyle(
-                                fontWeight: FontWeight.bold),
-                              ),
-                          ),
-                          DataColumn(label: Text('酔疾歩 弱',style: TextStyle(
-                              fontWeight: FontWeight.bold)),)
-                        ],
-                        rows:  [
-                          DataRow(
-                              color: MaterialStateProperty.resolveWith((states) {
-                                return Colors.blue[50];
-                              }),
-                              cells: const [
-                            DataCell(Text('ダメージ')),
-                            DataCell(Text('810'))
-                          ]),
-                          const DataRow(cells: [
-                            DataCell(Text('発生')),
-                            DataCell(Text('17F'))
-                          ]),
-                          DataRow(
-                              color: MaterialStateProperty.resolveWith((states) {
-                            return Colors.blue[50];
-                          }),cells: const [
-                            DataCell(Text('持続')),
-                            DataCell(Text('9F'))
-                          ]),
-                          const DataRow(cells: [
-                            DataCell(Text('全体')),
-                            DataCell(Text('42F'))
-                          ]),
-                          DataRow(
-                              color: MaterialStateProperty.resolveWith((states) {
-                            return Colors.blue[50];
-                          }),cells: const [
-                            DataCell(Text('ガード')),
-                            DataCell(Text('-6F'))
-                          ]),
-                          const DataRow(cells: [
-                            DataCell(Text('ヒット')),
-                            DataCell(Text('D (39F)'))
-                          ]),
-                          DataRow(
-                              color: MaterialStateProperty.resolveWith((states) {
-                            return Colors.blue[50];
-                          }),cells: const [
-                            DataCell(Text('カウンター')),
-                            DataCell(Text('D (39)'))
-                          ]),
-                          const DataRow(cells: [
-                            DataCell(Text('パニッシュ')),
-                            DataCell(Text('D (39)'))
-                          ]),
-                          DataRow(
-                              color: MaterialStateProperty.resolveWith((states) {
-                            return Colors.blue[50];
-                          }),cells: const [
-                            DataCell(Text('備考')),
-                            DataCell(Text('SA3でキャンセル可'))
-                          ]),
-                        ],
-                      ),
-                      const Expanded(child:
-                      TextField(
-                        enabled: true,
-                        maxLength: 30,
-                        style: TextStyle(color: Colors.black),
-                        obscureText: false,
-                        maxLines:2 ,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.text_snippet_outlined),
-                          hintText: 'メモを入力してください',
-                          labelText: 'memo *',
-                        ),
-                      ),
-                      ),
-                    ],
-                  ),
+              onPressed: () => Navigator.pop(context),
+            ),
+            actions: const [
+              Padding(
+                padding: EdgeInsets.only(right: 10),
               )
-
-          )
-
+            ]),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            child: Column(children: [
+              DataTable(
+                columns: [
+                  const DataColumn(
+                    label: Text(
+                      '技名',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  DataColumn(
+                    label: Text(list[index][0].toString(),
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                  )
+                ],
+                rows: [
+                  DataRow(cells: [
+                    const DataCell(Text('ダメージ')),
+                    DataCell(Text(list[index][2].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('発生')),
+                    DataCell(Text(list[index][4].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('持続')),
+                    DataCell(Text(list[index][5].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('全体')),
+                    DataCell(Text(list[index][7].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('ガード')),
+                    DataCell(Text(list[index][10].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('ヒット')),
+                    DataCell(Text(list[index][8].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('DRガード')),
+                    DataCell(Text(list[index][11].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('DRヒット')),
+                    DataCell(Text(list[index][9].toString()))
+                  ]),
+                  DataRow(cells: [
+                    const DataCell(Text('備考')),
+                    DataCell(Text(list[index][13].toString()))
+                  ]),
+                ],
+              ),
+            ]),
+          ),
         ),
+      ),
     );
   }
 }

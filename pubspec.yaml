@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   go_router:
   csv: ^5.0.2
+  asset_fill: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -29,4 +30,21 @@ flutter:
   uses-material-design: true
   assets:
     - Image/
-    - data/jamie/
+    - assets/blanka/
+    - assets/cammy/
+    - assets/chun-li/
+    - assets/dee jay/
+    - assets/dhalsim/
+    - assets/e.honda/
+    - assets/guile/
+    - assets/jamie/
+    - assets/jp/
+    - assets/juri/
+    - assets/ken/
+    - assets/kimberly/
+    - assets/lily/
+    - assets/luke/
+    - assets/manon/
+    - assets/marisa/
+    - assets/ryu/
+    - assets/zangief/

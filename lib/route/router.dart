@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../screen/framescreen.dart';
 import '../screen/homescreen.dart';
-import '../screen/jamiescreen.dart';
-import '../screen/test_csv_temp.dart';
+import '../screen/technique_list_home.dart';
 
 final goRouter = GoRouter(
   routes: [
@@ -13,19 +12,16 @@ final goRouter = GoRouter(
           return const MaterialPage(child: HomeScreen());
         }),
     GoRoute(
-        path: '/JAMIE',
+        path: '/frame',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: JamieScreen());
+          final args = state.extra! as List;
+          return MaterialPage(child: Frame(index: args[1], list: args[0]));
         }),
     GoRoute(
-        path: '/FRAME',
+        path: '/skill',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: Frame());
-        }),
-    GoRoute(
-        path: '/RYU',
-        pageBuilder: (context, state) {
-          return const MaterialPage(child: TestCsvTmp());
+          return MaterialPage(
+              child: TechniqueListHome(name: state.extra! as String));
         }),
   ],
 );
