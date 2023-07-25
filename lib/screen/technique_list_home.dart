@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetfightermemo/screen/technique_list.dart';
+
+import '../bloc/theme_bloc.dart';
 
 class TechniqueListHome extends StatelessWidget {
   const TechniqueListHome({super.key, required this.name});
@@ -7,11 +10,24 @@ class TechniqueListHome extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
+    final ThemeBloc themeBloc = BlocProvider.of<ThemeBloc>(context);
+
     return MaterialApp(
+      theme: themeBloc.state,
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
           appBar: AppBar(
+            actions: [
+              BlocBuilder<ThemeBloc, ThemeData>(builder: (context, theme) {
+                return IconButton(
+                  icon: const Icon(Icons.lightbulb),
+                  onPressed: () {
+                    themeBloc.add(ThemeEvent.toggle);
+                  },
+                );
+              })
+            ],
             leading: IconButton(
               icon: const Icon(
                 Icons.arrow_back,

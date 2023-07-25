@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/theme_bloc.dart';
 
 class Frame extends StatelessWidget {
   const Frame({
@@ -22,22 +25,31 @@ class Frame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeBloc themeBloc = BlocProvider.of<ThemeBloc>(context);
+
     return MaterialApp(
+      theme: themeBloc.state,
       home: Scaffold(
         appBar: AppBar(
-            title: const Text("Frame Data"),
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
-              onPressed: () => Navigator.pop(context),
+          title: const Text("Frame Data"),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
             ),
-            actions: const [
-              Padding(
-                padding: EdgeInsets.only(right: 10),
-              )
-            ]),
+            onPressed: () => Navigator.pop(context),
+          ),
+          actions: [
+            BlocBuilder<ThemeBloc, ThemeData>(builder: (context, theme) {
+              return IconButton(
+                icon: const Icon(Icons.lightbulb),
+                onPressed: () {
+                  themeBloc.add(ThemeEvent.toggle);
+                },
+              );
+            })
+          ],
+        ),
         body: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Container(

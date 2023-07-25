@@ -9,13 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_hooks:
-  flutter_riverpod:
-  freezed_annotation:
   cupertino_icons: ^1.0.2
   go_router:
   csv: ^5.0.2
   asset_fill: ^1.1.0
+  flutter_bloc: ^7.0.0
 
 dev_dependencies:
   flutter_test:
