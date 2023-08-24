@@ -17,6 +17,7 @@ class Charactor {
     14: {'name': 'jp', 'image': 'jp.png'},
     15: {'name': 'zangief', 'image': 'zangief.png'},
     16: {'name': 'lily', 'image': 'lily.png'},
-    17: {'name': 'cammy', 'image': 'cammy.png'}
+    17: {'name': 'cammy', 'image': 'cammy.png'},
+    18: {'name': 'rashid', 'image': 'rashid.png'},
   };
 }

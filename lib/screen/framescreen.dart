@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/theme_bloc.dart';
+import '../bloc/theme_bloc.dart'  ;
 
 class Frame extends StatelessWidget {
   const Frame({
@@ -52,7 +52,7 @@ class Frame extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(children: [
               DataTable(
