@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/theme_bloc.dart'  ;
+import '../bloc/theme_bloc.dart';
 
 class Frame extends StatelessWidget {
   const Frame({
@@ -44,7 +44,7 @@ class Frame extends StatelessWidget {
               return IconButton(
                 icon: const Icon(Icons.lightbulb),
                 onPressed: () {
-                  themeBloc.add(ThemeEvent.toggle);
+                  themeBloc.add(ChangeEvent());
                 },
               );
             })

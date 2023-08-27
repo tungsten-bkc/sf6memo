@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum ThemeEvent { toggle }
+abstract class ThemeEvent {}
+
+class ChangeEvent extends ThemeEvent {}
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
-  ThemeBloc() : super(_initialTheme);
+  ThemeBloc() : super(_initialTheme) {
+    on<ChangeEvent>((event, emit) async {
+      emit(state == _lightTheme ? _darkTheme : _lightTheme);
+    });
+  }
 
   static final ThemeData _lightTheme = ThemeData(
     brightness: Brightness.light,
@@ -17,11 +23,4 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
   );
 
   static final ThemeData _initialTheme = _lightTheme;
-
-  @override
-  Stream<ThemeData> mapEventToState(ThemeEvent event) async* {
-    if (event == ThemeEvent.toggle) {
-      yield state == _lightTheme ? _darkTheme : _lightTheme;
-    }
-  }
 }

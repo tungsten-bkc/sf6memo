@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             return IconButton(
               icon: const Icon(Icons.lightbulb),
               onPressed: () {
-                themeBloc.add(ThemeEvent.toggle);
+                themeBloc.add(ChangeEvent());
               },
             );
           })

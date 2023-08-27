@@ -13,7 +13,7 @@ dependencies:
   go_router:
   csv: ^5.0.2
   asset_fill: ^1.1.0
-  flutter_bloc: ^7.0.0
+  flutter_bloc: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -27,7 +27,6 @@ flutter:
 
   uses-material-design: true
   assets:
-    - Image/
     - assets/blanka/
     - assets/cammy/
     - assets/chun-li/
@@ -44,5 +43,7 @@ flutter:
     - assets/luke/
     - assets/manon/
     - assets/marisa/
+    - assets/rashid/
     - assets/ryu/
     - assets/zangief/
+    - Image/
